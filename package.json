@@ -20,16 +20,17 @@
   },
   "homepage": "https://github.com/jincheng411/Leetgo#readme",
   "dependencies": {
-    "axios": "^0.22.0",
-    "express": "^4.17.1",
-    "morgan": "^1.10.0",
     "@babel/core": "^7.12.17",
     "@babel/preset-env": "^7.12.17",
     "@babel/preset-react": "^7.12.13",
+    "axios": "^0.22.0",
     "babel-loader": "^8.2.2",
-    "webpack": "^5.23.0",
-    "webpack-cli": "^4.5.0",
+    "express": "^4.17.1",
+    "mongoose": "^6.0.10",
+    "morgan": "^1.10.0",
     "react": "^17.0.1",
-    "react-dom": "^17.0.1"
+    "react-dom": "^17.0.1",
+    "webpack": "^5.23.0",
+    "webpack-cli": "^4.5.0"
   }
 }
