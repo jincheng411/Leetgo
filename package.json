@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "server": "npx nodemon ./server/server.js",
+    "server": "npx nodemon ./server/app.js",
     "client": "webpack --watch"
   },
   "repository": {
@@ -26,6 +26,7 @@
     "axios": "^0.22.0",
     "babel-loader": "^8.2.2",
     "express": "^4.17.1",
+    "express-session": "^1.17.2",
     "mongoose": "^6.0.10",
     "morgan": "^1.10.0",
     "passport": "^0.5.0",
