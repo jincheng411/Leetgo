@@ -7,12 +7,10 @@ const Signup = () => {
   const handleSumbmit = (e) => {
     e.preventDefault();
     axios.post('/user/signup', { username, email, password })
-      .then((err, res) => {
-        if (err) {
-          console.log(err)
-        } else {
+      .then((res) => {
           console.log(res)
-        }
+      }).catch(err => {
+        console.log(err)
       })
   }
   return (

@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const passport = require('passport');
 const User = require('../models/user.js');
+const connectEnsureLogin = require('connect-ensure-login');
 
 router.post('/signup', function (req, res) {
   Users = new User({ email: req.body.email, username: req.body.username });
@@ -55,4 +56,8 @@ router.post('/logout', (req, res, next) => {
     next(err);
   }
 });
+
+router.get('/',connectEnsureLogin.ensureLoggedIn(), (req, res, next) => {
+  console.log(req.user)
+})
 module.exports = router;

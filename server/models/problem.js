@@ -12,7 +12,7 @@ var ProblemSchema = new mongoose.Schema({
     type: String,
     require: true
   },
-  count: {
+  frequency: {
     type: Number,
     default: 0
   },
@@ -20,7 +20,11 @@ var ProblemSchema = new mongoose.Schema({
     type: Date,
     require: true
   },
-  fav: {
+  difficulty: {
+    type: Number,
+    require: true
+  }
+  is_favor: {
     type: Boolean
   }
 })

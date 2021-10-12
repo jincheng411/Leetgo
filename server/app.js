@@ -6,6 +6,7 @@ const port = 3000;
 const db = require('./db');
 const User = require('./models/user.js')
 const userRouter = require('./route/user.js');
+const problemRouter = require('./route/problem.js');
 
 const passport = require('passport');
 const session = require('express-session');
@@ -25,9 +26,8 @@ passport.deserializeUser(User.deserializeUser());
 app.use(express.json());
 app.use(morgan('dev'));
 app.use('/', express.static(path.join(__dirname, '../client/dist')));
-
-
-app.use('/user', userRouter);
+app.use('/api/user', userRouter);
+app.use('/api/problem', problemRouter);
 
 app.get('/', (req, res) => {
   res.send('hello, world')
