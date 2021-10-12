@@ -23,6 +23,7 @@ router.post('/signup', function (req, res) {
   });
 });
 router.post('/login', passport.authenticate('local'), (req, res) => {
+
   User.findOne({
     username: req.body.username
   }, (err, person) => {

@@ -11,7 +11,7 @@ const passport = require('passport');
 const session = require('express-session');
 app.use(session({
   name: 'session-id',
-  secret: '123-456-789',
+  secret: 'secret',
   saveUninitialized: false,
   resave: false
 }));
