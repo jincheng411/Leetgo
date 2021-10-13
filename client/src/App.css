@@ -1,0 +1,14 @@
+body {
+  font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
+  margin:0 15%;
+}
+h1{
+  display: flex;
+  justify-content: center;
+  text-transform: uppercase;
+  font-weight: 800;
+}
+.add-problem-input{
+  margin-left: 20px;
+  height: 40px;
+}

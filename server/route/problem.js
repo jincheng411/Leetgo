@@ -60,6 +60,9 @@ router.put('/:id', async (req, res) => {
   User.updateOne({ 'id': user.id, 'problems.number': Number(id) }, {
     '$set': {
       'problems.$.lastTimeSolved': date
+    },
+    '$inc': {
+      'problems.$.freq' : 1
     }
   }).then(async (data) => {
     const user = await User.findOne();

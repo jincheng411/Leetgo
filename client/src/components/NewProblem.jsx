@@ -16,12 +16,11 @@ const NewProblem = ({updateList, isExist}) => {
       })
   }
   return (
-    <div>
-      <div>Add a problem</div>
+    <div className="add-problem">
       <form>
         <label>
-          Problem Number:
-          <input name="number" value={number} onChange={e => setNumber(e.target.value)}/>
+          Add a problem:
+          <input className="add-problem-input" name="number" value={number} onChange={e => setNumber(e.target.value)} placeholder="Problem #"/>
         </label>
         <button onClick={handleClick}>Look up</button>
       </form>

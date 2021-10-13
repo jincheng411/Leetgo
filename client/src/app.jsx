@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Signup from './components/Signup.jsx'
 import Login from './components/Login.jsx'
 import Home from './components/Home.jsx'
+import './App.css'
 class App extends React.Component {
   render() {
     return (
