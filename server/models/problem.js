@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 var ProblemSchema = new mongoose.Schema({
-  name: {
+  title: {
       type: String,
       required: true
   },
@@ -12,18 +12,17 @@ var ProblemSchema = new mongoose.Schema({
     type: String,
     require: true
   },
+  difficulty: {
+    type: Number,
+    require: true
+  },
   frequency: {
     type: Number,
     default: 0
   },
   lastTimeSolved: {
-    type: Date,
-    require: true
+    type: Date
   },
-  difficulty: {
-    type: Number,
-    require: true
-  }
   is_favor: {
     type: Boolean
   }

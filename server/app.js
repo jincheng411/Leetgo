@@ -27,7 +27,7 @@ app.use(express.json());
 app.use(morgan('dev'));
 app.use('/', express.static(path.join(__dirname, '../client/dist')));
 app.use('/api/user', userRouter);
-app.use('/api/problem', problemRouter);
+app.use('/api/problems', problemRouter);
 
 app.get('/', (req, res) => {
   res.send('hello, world')

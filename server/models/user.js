@@ -12,10 +12,7 @@ var UserSchema = new mongoose.Schema({
         required: true,
         unique: true
     },
-    problems: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "Problem"
-    }
+    problems: []
 })
 UserSchema.plugin(passportLocalMongoose);
 const User = mongoose.model('User', UserSchema);
