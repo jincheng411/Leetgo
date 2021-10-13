@@ -46,11 +46,11 @@ const ProblemList = ({ list, updateList }) => {
               <tr key={p.title}>
                 <td>{p.number}</td>
                 <td><a href={p.url} target="_blank">{p.title}</a></td>
-                <td>{difficulty[p.difficulty]}</td>
+                <td><span className={difficulty[p.difficulty]}>{difficulty[p.difficulty]}</span></td>
                 <td>{p.lastTimeSolved}</td>
                 <td>{getDay(p.lastTimeSolved, p.freq || 1)} days</td>
                 <td>{p.freq || 0}</td>
-                <td><span onClick={()=> markAsSolved(p.number)}>Mark as solved</span></td>
+                <td><span className="action" onClick={()=> markAsSolved(p.number)}>Mark as solved</span></td>
               </tr>
             )
           })}

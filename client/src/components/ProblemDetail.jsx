@@ -13,19 +13,18 @@ const ProblemDetail = ({ problem, updateList, isExist }) => {
   }
   const difficulty = {1: 'Easy', 2: 'Medium', 3: 'Hard'}
   return (
-    <div>
+    <div className="problem-detail">
       {problem &&
         <div>
-          <div><p><span>Problem ID: </span>{problem.question_id}</p> </div>
-          <div><p><span>Title: </span>{problem.question_title}</p> </div>
-          <div><p><span>Difficulty: </span>{difficulty[problem.difficulty]}</p> </div>
-          <div><p><span>URL: </span>{problem.url}</p> </div>
+          <div><p><span className="problem-detail-label">Problem ID: </span>{problem.question_id}</p> </div>
+          <div><p><span className="problem-detail-label">Title: </span>{problem.question_title}</p> </div>
+          <div><p><span className="problem-detail-label">Difficulty: </span><span className={difficulty[problem.difficulty]}>{difficulty[problem.difficulty]}</span></p> </div>
+          <div><p><span className="problem-detail-label">URL: </span>{problem.url}</p> </div>
+          <button onClick={handleClick}>Add to your list</button>
         </div>
-
       }
-      <button onClick={handleClick}>Add to your list</button>
       {isExist &&
-      <span >This problem already in the list</span>}
+      <span className="warning">This problem already in the list</span>}
     </div>
   )
 }
