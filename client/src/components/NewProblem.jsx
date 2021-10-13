@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import ProblemDetail from './ProblemDetail.jsx'
 
-const NewProblem = () => {
+const NewProblem = ({updateList, isExist}) => {
   const [number, setNumber] = useState('');
   const [problem, setProblem] = useState(null);
   const handleClick = (e) => {
@@ -21,11 +21,11 @@ const NewProblem = () => {
       <form>
         <label>
           Problem Number:
-          <input name="number" value={number} onChange={e => setNumber(e.target.value)} />
+          <input name="number" value={number} onChange={e => setNumber(e.target.value)}/>
         </label>
         <button onClick={handleClick}>Look up</button>
       </form>
-      <ProblemDetail problem={problem} />
+      <ProblemDetail problem={problem} updateList={updateList} isExist={isExist}/>
     </div>
   )
 }

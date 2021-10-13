@@ -57,7 +57,8 @@ router.post('/logout', (req, res, next) => {
   }
 });
 
-router.get('/',connectEnsureLogin.ensureLoggedIn(), (req, res, next) => {
+router.get('/', (req, res, next) => {
   console.log(req.user)
-})
+});
+
 module.exports = router;

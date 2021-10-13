@@ -30,7 +30,7 @@ router.post('/', async function (req, res) {
     url: req.body.url,
     difficulty: req.body.difficulty
   };
-  const user = await User.findOne();
+  const user = await User.findOne()
   console.log(obj.number)
   const problem = await User.find({ "problems.number": obj.number })
   if (problem.length > 0) {
@@ -48,4 +48,26 @@ router.post('/', async function (req, res) {
       })
   }
 })
+router.get('/', async function (req, res) {
+  const user = await User.findOne();
+  res.json(user.problems)
+});
+
+router.put('/:id', async (req, res) => {
+  const user = await User.findOne();
+  const { id } = req.params;
+  const date = req.body.date
+  User.updateOne({ 'id': user.id, 'problems.number': Number(id) }, {
+    '$set': {
+      'problems.$.lastTimeSolved': date
+    }
+  }).then(async (data) => {
+    const user = await User.findOne();
+    res.json(user.problems)
+  }).catch(err => {
+    console.log(err)
+  })
+  // User.findByIdAndUpdate(user.id)
+})
+
 module.exports = router;

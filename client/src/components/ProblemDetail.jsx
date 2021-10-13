@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 
-const ProblemDetail = ({ problem }) => {
+const ProblemDetail = ({ problem, updateList, isExist }) => {
   const handleClick = (e) => {
     e.preventDefault()
     axios.post('/api/problems', problem)
       .then(res => {
-        console.log(res)
+        updateList(res)
       }).catch (err => {
         console.log(err)
       })
@@ -24,6 +24,8 @@ const ProblemDetail = ({ problem }) => {
 
       }
       <button onClick={handleClick}>Add to your list</button>
+      {isExist &&
+      <span >This problem already in the list</span>}
     </div>
   )
 }
